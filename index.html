@@ -44,7 +44,8 @@
         <a href="https://github.com/javachaos/SolarTracer">SolarTracer</a><br />
         <a href="https://github.com/javachaos/algobase_quarkus">Algobase</a><br />
         <a href="https://github.com/javachaos/blackether">BlackEther (Minecraft mod)</a><br />
-        <a href="https://youtu.be/oHg5SJYRHA0">Quantum-Finite NGLYD n-polynomial Encryption Scheme</a><br />
+        <a href="https://youtu.be/oHg5SJYRHA0">Quantum-Finite NGLYD n-polynomial Encryption Scheme</a><br /><br /><br />
+        <input type="range" id="slider" min="1" max="16" value="5.2" step="0.001" /><br />
     </center>
   </div>
   <script>
@@ -52,6 +53,7 @@
     const gl =  canvas.getContext('webgl', { antialias: true });
     canvas.width = canvas.clientWidth * window.devicePixelRatio;
     canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    var slider = document.getElementById("slider");
     gl.viewport(0, 0, canvas.width, canvas.height);
     const gridRows = 64;
     const gridCols = 128;
@@ -89,7 +91,7 @@
                 const liveNeighborCount = countLiveNeighbors(row, col);
                 let newCellState = 0;
                 if (cellState % 2 == 1 && cellIndex % 2 == 0) {
-                    newCellState ^= ((cellState) - (cellIndex % 8)) % Math.floor(Math.random() * 4.5);
+                    newCellState ^= ((cellState) - (cellIndex % 8)) % Math.floor(Math.random() * parseInt(slider.value));
                 }
                 if (cellState === 1) {
                     if (liveNeighborCount === 2 || liveNeighborCount === 3) {
