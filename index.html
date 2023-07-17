@@ -52,17 +52,17 @@
   <script>
     const canvas = document.getElementById('canvas');
     const gl =  canvas.getContext('webgl', { antialias: true });
-    canvas.width = canvas.clientWidth * window.devicePixelRatio * 0.5;
-    canvas.height = canvas.clientHeight * window.devicePixelRatio * 0.5;
+    canvas.width = canvas.clientWidth * window.devicePixelRatio * 0.25;
+    canvas.height = canvas.clientHeight * window.devicePixelRatio * 0.25;
     var slider = document.getElementById("slider");
     gl.viewport(0, 0, canvas.width, canvas.height);
     var sliderValue = document.getElementById("sliderValue");
     slider.addEventListener("input", function() {
       sliderValue.textContent = slider.value;
     });
-    const gridRows = 64;
-    const gridCols = 128;
-    const cellSize = 16;
+    const gridRows = 256;
+    const gridCols = 512;
+    const cellSize = 8;
     let grid = [];
     let nextGrid = [];
     for (let i = 0; i < gridRows * gridCols; i++) {
