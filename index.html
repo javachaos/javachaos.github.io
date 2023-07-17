@@ -52,8 +52,8 @@
   <script>
     const canvas = document.getElementById('canvas');
     const gl =  canvas.getContext('webgl', { antialias: true });
-    canvas.width = canvas.clientWidth * window.devicePixelRatio;
-    canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    canvas.width = canvas.clientWidth * window.devicePixelRatio * 0.5;
+    canvas.height = canvas.clientHeight * window.devicePixelRatio * 0.5;
     var slider = document.getElementById("slider");
     gl.viewport(0, 0, canvas.width, canvas.height);
     var sliderValue = document.getElementById("sliderValue");
