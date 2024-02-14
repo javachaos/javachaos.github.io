@@ -78,7 +78,7 @@
     function renderGameOfLife() {
         gl.clear(gl.COLOR_BUFFER_BIT);
         for (let row = 0; row < gridRows; row++) {
-            for (let col = 0; col < gridCols; col++) {
+        for (let col = 0; col < gridCols; col++) {
                 const cellIndex = row * gridCols + col;
                 const cellState = grid[cellIndex];
                 const cellX = col * cellSize;
@@ -91,8 +91,9 @@
         }
         updateGameState();
         [grid, nextGrid] = [nextGrid, grid];
-        setTimeout(renderGameOfLife, 1);
+        requestAnimationFrame(renderGameOfLife);
     }
+
     function updateGameState() {
         for (let row = 0; row < gridRows; row++) {
             for (let col = 0; col < gridCols; col++) {
