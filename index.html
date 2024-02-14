@@ -55,7 +55,7 @@
   </div>
   <script>
     const canvas = document.getElementById('canvas');
-    const gl =  canvas.getContext('webgl', { antialias: true });
+    const gl =  canvas.getContext('webgl', { antialias: false })
     var context = canvas.getContext('2d');
     canvas.width = canvas.clientWidth * window.devicePixelRatio * 0.25;
     canvas.height = canvas.clientHeight * window.devicePixelRatio * 0.25;
